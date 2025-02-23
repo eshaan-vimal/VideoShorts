@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 
-const MONGODB_URI = process.env.MONGO_URI!;
+const MONGODB_URI = process.env.MONGODB_URI!;
 
 if (!MONGODB_URI)
 {
-    throw new Error("Define MONGODB_URI in .env file");
+    throw new Error("define MONGODB_URI in .env file");
 }
 
 
@@ -46,8 +46,10 @@ async function connectDB ()
     catch (error)
     {
         cached.promise = null;
-        throw new Error("Database connection failed.");
+        throw new Error("database connection failed.");
     }
 
     return cached.conn;
 }
+
+export default connectDB;
