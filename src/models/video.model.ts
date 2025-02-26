@@ -20,8 +20,8 @@ export interface VideoType
         width: number,
         quality?: number,
     };
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 const videoSchema = new mongoose.Schema<VideoType>({
